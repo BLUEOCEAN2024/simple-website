@@ -1,18 +1,14 @@
-name: Build and Test
+name: Basic CI for Static Website
 
 on:
   push:
-    branches: [ main ]  # Trigger on push to main branch
+    branches: [ main ]
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest  # Use Ubuntu runner
+  build-and-check:
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3  # Checkout code
-
-      - name: Install dependencies
-        run: npm install  # Replace with your project's install command
-
-      - name: Run tests
-        run: npm test  # Replace with your test command
+      - uses: actions/checkout@v3
+      - name: Check file structure
+        run: ls -la
